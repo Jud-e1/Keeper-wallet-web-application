@@ -1,53 +1,69 @@
-import React from "react";
-
-const chainIcons = [
-  { color: "bg-orange-400", icon: "O" },
-  { color: "bg-blue-500", icon: "B" },
-  { color: "bg-purple-500", icon: "P" },
-  { color: "bg-yellow-400", icon: "Y" },
-  { color: "bg-black", icon: "K" },
-];
-
-const SupportedChains: React.FC = () => {
+const SupportedChains = () => {
   return (
-    <section className="w-full py-20 bg-[#f7f8fa] flex flex-col items-center px-4">
-      <div className="mb-6">
-        <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Supported Chains</span>
-      </div>
-      <div className="w-full flex justify-center">
-        <div className="relative w-full max-w-3xl h-72 flex items-center justify-center bg-white rounded-2xl shadow-lg">
-          {/* Central node */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow">Supported Chains</div>
-          </div>
-          {/* Chain nodes */}
-          <div className="absolute left-1/2 top-10 -translate-x-1/2">
-            <div className="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center text-white font-bold text-xl shadow">O</div>
-          </div>
-          <div className="absolute left-10 top-1/2 -translate-y-1/2">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow">B</div>
-          </div>
-          <div className="absolute right-10 top-1/2 -translate-y-1/2">
-            <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow">P</div>
-          </div>
-          <div className="absolute left-28 bottom-10">
-            <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-xl shadow">Y</div>
-          </div>
-          <div className="absolute right-28 bottom-10">
-            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold text-xl shadow">K</div>
-          </div>
-          {/* Connecting lines (SVG) */}
-          <svg className="absolute inset-0 w-full h-full z-0">
-            <line x1="50%" y1="40" x2="50%" y2="50%" stroke="#e5e7eb" strokeWidth="2" />
-            <line x1="50%" y1="50%" x2="7%" y2="50%" stroke="#e5e7eb" strokeWidth="2" />
-            <line x1="50%" y1="50%" x2="93%" y2="50%" stroke="#e5e7eb" strokeWidth="2" />
-            <line x1="50%" y1="50%" x2="20%" y2="90%" stroke="#e5e7eb" strokeWidth="2" />
-            <line x1="50%" y1="50%" x2="80%" y2="90%" stroke="#e5e7eb" strokeWidth="2" />
+    <div className="flex justify-center items-center py-12 bg-gray-50">
+      <div className="relative w-full max-w-screen-xl h-[600px] px-4">
+       
+       
+        {/* SVG with boundary and shadow */}
+        <div className="absolute inset-0 border border-black/10 shadow-lg rounded-[40px] overflow-hidden" style={{ zIndex: 1 }}>
+          <svg 
+            className="w-full h-full"
+            viewBox="0 0 1200 600"
+            preserveAspectRatio="none"
+          >
+            <path d="M 200 300 L 1000 300" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 200 300 Q 160 240 140 120" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 200 300 Q 160 360 140 480" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 1000 300 Q 1040 240 1060 120" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 1000 300 Q 1040 360 1060 480" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 600 100 L 600 280" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
+            <path d="M 600 500 L 600 320" stroke="#93c5fd" strokeWidth="2" strokeDasharray="8,8" fill="none" />
           </svg>
         </div>
+        {/* Center label */}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-100 text-blue-600 text-lg font-semibold py-4 px-8 rounded-full border border-blue-200 shadow-sm" style={{ zIndex: 10 }}>
+          Supported Chains
+        </div>
+
+        {/* Adjusted chain icon positions */}
+        <div className="absolute top-20 left-32 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/bitcoin.png" alt="Bitcoin" className="w-12 h-12" />
+          </div>
+        </div>
+
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/ethereum.png" alt="Ethereum" className="w-12 h-12" />
+          </div>
+        </div>
+
+        <div className="absolute top-20 right-32 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/solana.png" alt="Solana" className="w-12 h-12" />
+          </div>
+        </div>
+
+        <div className="absolute bottom-20 left-32 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/liquid.png" alt="Liquid" className="w-12 h-12" />
+          </div>
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/6548343bfb913dc56cf82b3c780dcba2646942ea.png" alt="Sei" className="w-12 h-12" />
+          </div>
+        </div>
+
+        <div className="absolute bottom-20 right-32 z-10">
+          <div className="w-20 h-20 bg-white rounded-xl border border-gray-200 shadow-md flex items-center justify-center">
+            <img src="/7e31821ccb607166ba780cefd094f1e29e2d8c84.png" alt="Polygon" className="w-12 h-12" />
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default SupportedChains; 
+export default SupportedChains;

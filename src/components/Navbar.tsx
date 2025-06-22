@@ -22,9 +22,9 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center space-x-3 group cursor-pointer">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-200">
-            <span className="text-white font-bold text-xl">K</span>
-          </div>
+          <a href="/" className="flex items-center">
+            <img src="/68026311616.png" alt="Logo" className="w-10 h-10 transform group-hover:scale-105 transition-transform duration-200" />
+          </a>
           <span className="font-bold text-2xl text-gray-900 group-hover:text-blue-600 transition-colors">
             Keepar
           </span>
