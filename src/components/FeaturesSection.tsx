@@ -97,7 +97,7 @@ const FeaturesSection: React.FC = () => {
                 {idx === 0 && (
                   <div className="w-40 h-40 flex items-center justify-center relative">
                     <img 
-                      src="public/image-Photoroom (9).png" 
+                      src="/image-Photoroom (9).png" 
                       alt="Security Shield Icon"
                       className="w-full h-full object-contain relative z-10"
                     />
@@ -124,7 +124,7 @@ const FeaturesSection: React.FC = () => {
                 {idx === 3 && (
                   <div className="w-40 h-40 flex items-center justify-center relative">
                     <img 
-                      src="public/image-Photoroom (12).png" 
+                      src="/image-Photoroom (12).png" 
                       alt="Smart Triggers Icon"
                       className="w-full h-full object-contain relative z-10"
                     />
